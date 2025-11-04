@@ -1,0 +1,26 @@
+<div class="grid auto-cols-max grid-flow-col gap-5 text-center d-flex justify-center">
+    <div class="flex flex-col">
+        <span class="countdown font-mono text-5xl">
+            <span [style.--value]="giorni" aria-live="polite" [attr.aria-label]="giorni">{{ giorni }}</span>
+        </span>
+        giorni
+    </div>
+    <div class="flex flex-col">
+        <span class="countdown font-mono text-5xl">
+            <span [style.--value]="ore" aria-live="polite" [attr.aria-label]="ore">{{ ore }}</span>
+        </span>
+        ore
+    </div>
+    <div class="flex flex-col">
+        <span class="countdown font-mono text-5xl">
+            <span [style.--value]="minuti" aria-live="polite" [attr.aria-label]="minuti">{{ minuti }}</span>
+        </span>
+        minuti
+    </div>
+    <div class="flex flex-col">
+        <span class="countdown font-mono text-5xl">
+            <span [style.--value]="secondi" aria-live="polite" [attr.aria-label]="secondi">{{ secondi }}</span>
+        </span>
+        secondi
+    </div>
+</div>
