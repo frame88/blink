@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements AfterViewInit {
   model = {
     name: '',
     email: '',
@@ -28,5 +28,17 @@ export class FormComponent {
   goBack(): void {
     // Simple, dependency-free navigation back
     window.history.back();
+  }
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit(): void {
+    const gsap = (window as any).gsap;
+    if (!gsap) return;
+
+    const nodes = this.el.nativeElement.querySelectorAll(':scope > *');
+    if (nodes && nodes.length) {
+      gsap.from(nodes, { opacity: 0, y: 12, stagger: 0.06, duration: 0.5, ease: 'power2.out' });
+    }
   }
 }

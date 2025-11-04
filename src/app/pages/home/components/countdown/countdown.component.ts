@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, OnInit, OnDestroy, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.scss']
 })
-export class CountdownComponent implements OnInit, OnDestroy {
+export class CountdownComponent implements OnInit, OnDestroy, AfterViewInit {
   giorni = 0;
   ore = 0;
   minuti = 0;
@@ -21,6 +21,17 @@ export class CountdownComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
+    }
+  }
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit(): void {
+    const gsap = (window as any).gsap;
+    if (!gsap) return;
+    const nodes = this.el.nativeElement.querySelectorAll(':scope > *');
+    if (nodes && nodes.length) {
+      gsap.from(nodes, { opacity: 0, y: 8, stagger: 0.06, duration: 0.45, ease: 'power2.out' });
     }
   }
 
