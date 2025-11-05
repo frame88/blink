@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class FormComponent implements AfterViewInit {
   model = {
     name: '',
+    surname: '',
     email: '',
     phone: '',
     birthday: ''
