@@ -17,7 +17,13 @@
 			<fieldset class="fieldset">
 				<legend class="fieldset-legend text-xl">Nome</legend>
 				<input name="name" required [(ngModel)]="model.name" class="input input-bordered w-full" placeholder="Il tuo nome" />
-				<p class="label">Inserisci il tuo nome come vuoi che appaia sull'invito</p>
+				<p class="label">Inserisci il tuo nome</p>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<legend class="fieldset-legend text-xl">Cognome</legend>
+				<input name="surname" required [(ngModel)]="model.surname" class="input input-bordered w-full" placeholder="Il tuo cognome" />
+				<p class="label">Inserisci il tuo cognome</p>
 			</fieldset>
 
 			<fieldset class="fieldset">
