@@ -19,11 +19,11 @@ export class FormComponent implements AfterViewInit {
   submitted = false;
   // pagination
 
-  onSubmit(): void {
-    this.submitted = true;
-    // For now just log the values; in a real app you'd POST to an API
-    console.log('Form submitted', this.model);
-  }
+  // onSubmit(): void {
+  //   this.submitted = true;
+  //   // For now just log the values; in a real app you'd POST to an API
+  //   console.log('Form submitted', this.model);
+  // }
 
   goBack(): void {
     // Simple, dependency-free navigation back
