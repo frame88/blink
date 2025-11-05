@@ -43,9 +43,9 @@ export class CountdownComponent implements OnInit, OnDestroy, AfterViewInit {
     const now = new Date();
     const year = now.getFullYear();
     // Months are 0-based in JS Date: 10 -> November
-    const targetThisYear = new Date(year, 10, 7, 23, 0, 0, 0);
+    const targetThisYear = new Date(year, 10, 7, 22, 0, 0, 0);
     if (now > targetThisYear) {
-      return new Date(year + 1, 10, 7, 23, 0, 0, 0);
+      return new Date(year + 1, 10, 7, 22, 0, 0, 0);
     }
     return targetThisYear;
   }
